@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173D2B">
+  <meta name="description" content="Scientific references, research articles, extraction patent, and scientific databases used in this research poster.">
+  <title>References & Scientific Sources</title>
+  <style>
+    :root {
+      --green: #173D2B;
+      --sage: #55745A;
+      --gold: #C5A66A;
+      --cream: #F4EBDD;
+      --white: #FFFFFF;
+      --ink: #203329;
+      --muted: #68776d;
+      --line: rgba(23, 61, 43, .13);
+      --shadow: 0 18px 50px rgba(23, 61, 43, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(197,166,106,.15), transparent 25rem),
+        linear-gradient(180deg, #fbf9f4 0%, var(--cream) 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .page { width: min(920px, calc(100% - 36px)); margin: 0 auto; padding: 34px 0 56px; }
+    .hero {
+      position: relative; overflow: hidden; isolation: isolate;
+      padding: clamp(34px, 7vw, 66px) clamp(24px, 6vw, 58px);
+      border-radius: 26px; color: var(--white); background: var(--green);
+      box-shadow: var(--shadow);
+    }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; z-index: -1; border: 1px solid rgba(244,235,221,.17);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero::before { width: 360px; height: 360px; right: -100px; top: -210px; }
+    .hero::after { width: 250px; height: 250px; right: -48px; top: -155px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; margin: 0 0 18px;
+      color: #e4d4b5; font-size: .76rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 25px; height: 2px; background: var(--gold); }
+    h1 { max-width: 650px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.35rem, 6vw, 4.2rem); font-weight: 500; line-height: 1.06; letter-spacing: -.035em; }
+    .intro { max-width: 590px; margin: 20px 0 0; color: rgba(255,255,255,.78); font-size: 1.02rem; }
+    .hero-bottom { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .pill { padding: 7px 12px; border: 1px solid rgba(255,255,255,.2); border-radius: 99px; color: #f1e8d8; font-size: .78rem; }
+    main { padding: 36px 0 0; }
+    .section { margin: 0 0 34px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin: 0 2px 15px; }
+    .section-kicker { margin: 0 0 3px; color: var(--sage); font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { margin: 0; color: var(--green); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 500; line-height: 1.2; }
+    .count { flex: 0 0 auto; color: var(--muted); font-size: .78rem; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .source {
+      display: flex; min-height: 112px; flex-direction: column; justify-content: space-between;
+      padding: 18px 19px; border: 1px solid var(--line); border-radius: 16px;
+      background: rgba(255,255,255,.78); text-decoration: none; box-shadow: 0 5px 18px rgba(23,61,43,.035);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .source:hover { transform: translateY(-3px); border-color: rgba(85,116,90,.5); box-shadow: 0 12px 28px rgba(23,61,43,.09); }
+    .source:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .source-top { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .source-title { color: var(--green); font-size: .98rem; font-weight: 750; line-height: 1.35; }
+    .arrow { flex: 0 0 auto; color: var(--sage); font-size: 1.15rem; line-height: 1; }
+    .source-type { margin-top: 12px; color: var(--muted); font-size: .77rem; }
+    .patent {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 22px 23px; border: 1px solid rgba(197,166,106,.55); border-radius: 17px;
+      background: linear-gradient(110deg, rgba(197,166,106,.17), rgba(255,255,255,.82));
+      text-decoration: none; transition: transform .18s ease;
+    }
+    .patent:hover { transform: translateY(-2px); }
+    .patent strong { display: block; color: var(--green); font-size: 1rem; }
+    .patent span { display: block; margin-top: 5px; color: var(--muted); font-size: .82rem; }
+    .patent .arrow { font-size: 1.35rem; }
+    .databases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .database {
+      padding: 18px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,255,255,.68);
+      text-decoration: none; transition: background .18s ease, transform .18s ease;
+    }
+    .database:hover { background: white; transform: translateY(-2px); }
+    .database strong { display: block; color: var(--green); font-size: .96rem; }
+    .database span { display: block; margin-top: 5px; color: var(--muted); font-size: .76rem; overflow-wrap: anywhere; }
+    .footer { margin-top: 42px; padding: 22px 5px 0; border-top: 1px solid var(--line); text-align: center; }
+    .footer-mark { width: 34px; height: 3px; margin: 0 auto 13px; border-radius: 9px; background: var(--gold); }
+    .footer p { margin: 0; color: var(--muted); font-size: .8rem; }
+    .footer .thanks { margin-bottom: 5px; color: var(--green); font-family: Georgia, "Times New Roman", serif; font-size: 1.1rem; }
+    @media (max-width: 620px) {
+      .page { width: min(100% - 24px, 540px); padding-top: 12px; }
+      .hero { border-radius: 20px; }
+      .cards { grid-template-columns: 1fr; }
+      .source { min-height: 94px; }
+      .databases { grid-template-columns: 1fr; }
+      .database { padding: 15px 17px; }
+      .section-head { align-items: center; }
+    }
+    @media print {
+      body { background: white; }
+      .page { width: 100%; padding: 0; }
+      .hero { box-shadow: none; }
+      .source, .database, .patent { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">Research poster · References</p>
+      <h1>References &amp;<br>Scientific Sources</h1>
+      <p class="intro">Explore the scientific articles, extraction patent, and research databases consulted during the preparation of this poster.</p>
+      <div class="hero-bottom">
+        <span class="pill">Peer-reviewed research</span>
+        <span class="pill">Scientific databases</span>
+        <span class="pill">Extraction method</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" aria-labelledby="articles-heading">
+        <div class="section-head">
+          <div><p class="section-kicker">01 · Literature</p><h2 id="articles-heading">Scientific Research Articles</h2></div>
+          <span class="count">6 sources</span>
+        </div>
+        <div class="cards">
+          <a class="source" href="https://www.nature.com/articles/s41598-025-29398-0" target="_blank" rel="noopener noreferrer">
+            <span class="source-top"><span class="source-title">Scientific Reports</span><span class="arrow">↗</span></span>
+            <span class="source-type">Nature · Research article</span>
+          </a>
+          <a class="source" href="https://www.mdpi.com/1422-0067/25/19/10856" target="_blank" rel="noopener noreferrer">
+            <span class="source-top"><span class="source-title">International Journal of Molecular Sciences</span><span class="arrow">↗</span></span>
+            <span class="source-type">MDPI · Research article</span>
+          </a>
+          <a class="source" href="https://www.mdpi.com/2076-3921/12/2/224" target="_blank" rel="noopener noreferrer">
+            <span class="source-top"><span class="source-title">Antioxidants</span><span class="arrow">↗</span></span>
+            <span class="source-type">MDPI · Research article</span>
+          </a>
+          <a class="source" href="https://www.sciencedirect.com/science/article/pii/S0963996917307159#bb0880" target="_blank" rel="noopener noreferrer">
+            <span class="source-top"><span class="source-title">Food Research International</span><span class="arrow">↗</span></span>
+            <span class="source-type">ScienceDirect · Research article</span>
+          </a>
+          <a class="source" href="https://www.mdpi.com/1420-3049/28/6/2584" target="_blank" rel="noopener noreferrer">
+            <span class="source-top"><span class="source-title">Molecules</span><span class="arrow">↗</span></span>
+            <span class="source-type">MDPI · Research article</span>
+          </a>
+          <a class="source" href="https://www.mdpi.com/2076-3417/16/9/4088" target="_blank" rel="noopener noreferrer">
+            <span class="source-top"><span class="source-title">Applied Sciences</span><span class="arrow">↗</span></span>
+            <span class="source-type">MDPI · Research article</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="patent-heading">
+        <div class="section-head">
+          <div><p class="section-kicker">02 · Method</p><h2 id="patent-heading">Extraction Method &amp; Patent</h2></div>
+          <span class="count">1 source</span>
+        </div>
+        <a class="patent" href="https://patents.google.com/patent/EP3756476A1/en" target="_blank" rel="noopener noreferrer">
+          <span><strong>European Patent EP3756476A1</strong><span>Google Patents · Extraction reference</span></span>
+          <span class="arrow">↗</span>
+        </a>
+      </section>
+
+      <section class="section" aria-labelledby="databases-heading">
+        <div class="section-head">
+          <div><p class="section-kicker">03 · Reference tools</p><h2 id="databases-heading">Scientific Databases</h2></div>
+          <span class="count">3 databases</span>
+        </div>
+        <div class="databases">
+          <a class="database" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer"><strong>PubMed</strong><span>Biomedical literature database ↗</span></a>
+          <a class="database" href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer"><strong>PubChem</strong><span>Chemical information resource ↗</span></a>
+          <a class="database" href="https://www.sciencedirect.com/" target="_blank" rel="noopener noreferrer"><strong>ScienceDirect</strong><span>Scientific and technical publications ↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-mark"></div>
+      <p class="thanks">Thank you for exploring our sources.</p>
+      <p>All links open their original publisher or database pages.</p>
+    </footer>
+  </div>
+</body>
+</html>
